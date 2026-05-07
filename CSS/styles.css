@@ -17,6 +17,7 @@ button, select {
     border-radius: 8px;
     border: none;
     cursor: pointer;
+
 }
 button:hover {
     background-color: #2563eb;
@@ -40,7 +41,7 @@ button:hover {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #f9f9f9;
+    background-color: #6993ec;
     color: #333;
     padding: 10px 20px;
     border-radius: 5px;

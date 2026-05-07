@@ -45,7 +45,7 @@ function generarHSL() {
     h: hue,
     s: saturation,
     l: lightness,
-    css: `hsl(${hue}, ${saturation}%, ${lightness}%)`
+    css: `hsl(${hue}, ${saturation}%, ${lightness}%)` 
   };
 }
 // Función para convertir HSL a HEX conseguida en internet y adaptada a mi código con ChatGPT

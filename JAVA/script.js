@@ -25,7 +25,12 @@ function generarCajas(numCajas) {
     nuevaCaja.classList.add("caja");
     const color = generarHSL();
     nuevaCaja.style.backgroundColor = color.css;
-    nuevaCaja.textContent ="HEX: " + hslToHex(color.h, color.s, color.l); // Agrego el valor HEX dentro de la caja
+
+    const textCaja = document.createElement("div");
+    textCaja.classList.add("textCaja");
+    textCaja.innerHTML = "<p>HEX: " + hslToHex(color.h, color.s, color.l) + "</p>";// Agrego el valor HEX dentro de la caja
+    textCaja.innerHTML += "<p>" + color.texto + "</p>";// Agrego el valor HSL dentro de la caja
+    nuevaCaja.appendChild(textCaja);
     caja.appendChild(nuevaCaja);
   }
 }
@@ -45,7 +50,8 @@ function generarHSL() {
     h: hue,
     s: saturation,
     l: lightness,
-    css: `hsl(${hue}, ${saturation}%, ${lightness}%)` 
+    css: `hsl(${hue}, ${saturation}%, ${lightness}%)` , // Devuelve el color en formato CSS HSL
+    texto: `HSL: (${hue}, ${saturation}%, ${lightness}%)` // Devuelve el texto con el valor HSL para mostrar en la caja
   };
 }
 // Función para convertir HSL a HEX conseguida en internet y adaptada a mi código con ChatGPT

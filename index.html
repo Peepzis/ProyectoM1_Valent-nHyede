@@ -4,11 +4,19 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="./CSS/styles.css">
   <script src="./JAVA/script.js" defer></script>
-  <title>Proyecto-Test</title>
+  <title>Colorfly Studio</title>
 </head>
 
 
 <body>
+  
+  <header>
+    <h1>Colorfly Studio</h1>
+    <p>Bienvenido a Colorfly Studio. Aquí puedes crear combinaciones de colores únicas para tus proyectos de diseño.</p>
+    <p>Haz clic en el botón para generar una nueva paleta de colores aleatoria.</p>
+  </header>
+  <main>
+
   <div class="contenedorPrincipal">
     <div class="contenedorBTN">
     <button type="button" id="btnCambio">Presióname</button> 
@@ -18,11 +26,18 @@
       <option value="8">8 paletas</option>
       <option value="9">9 paletas</option>
     </select>
+
+    <select id="tipoCodigo">
+  <option value="hex"> HEX</option>
+  <option value="hsl"> HSL</option>
+</select>
+
     </div>
     <article class="caja" ></article>
     
     <div class="toast"> Color generado </div>
 
   </div>
+  </main>
 </body>
 </html>

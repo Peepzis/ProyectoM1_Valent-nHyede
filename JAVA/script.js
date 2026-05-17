@@ -3,6 +3,7 @@ let boton = document.getElementById("btnCambio");
 const cantidadPaletas = document.getElementById("cantPaletas");
 const toast = document.querySelector(".toast"); //Busco el toast en el CSS
 console.log(toast);
+const tipoCodigo = document.getElementById("tipoCodigo"); //Busco el select para elegir el tipo de código a mostrar
 boton.addEventListener("click", function () {
   console.log(cantidadPaletas.value);
   document.querySelector(".caja").innerHTML = ""; //limpio la caja antes de generar las nuevas cajas
@@ -28,8 +29,20 @@ function generarCajas(numCajas) {
 
     const textCaja = document.createElement("div");
     textCaja.classList.add("textCaja");
-    textCaja.innerHTML = "<p>HEX: " + hslToHex(color.h, color.s, color.l) + "</p>";// Agrego el valor HEX dentro de la caja
-    textCaja.innerHTML += "<p>" + color.texto + "</p>";// Agrego el valor HSL dentro de la caja
+    const hex = hslToHex(color.h, color.s, color.l);
+
+if (tipoCodigo.value === "hex") {
+  textCaja.innerHTML = `<p>HEX: ${hex}</p>`;
+}
+else if (tipoCodigo.value === "hsl") {
+  textCaja.innerHTML = `<p>${color.texto}</p>`;
+}
+else {
+  textCaja.innerHTML = `
+    <p>HEX: ${hex}</p>
+    <p>${color.texto}</p>
+  `;
+}
     nuevaCaja.appendChild(textCaja);
     caja.appendChild(nuevaCaja);
   }
@@ -90,3 +103,7 @@ function hslToHex(h, s, l) {
 
   return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
 }
+// Llamo a la función generarCajas al cargar la página para mostrar las cajas iniciales
+window.addEventListener("DOMContentLoaded", function () {
+  generarCajas(6);
+});

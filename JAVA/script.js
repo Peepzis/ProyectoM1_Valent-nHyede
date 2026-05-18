@@ -12,9 +12,8 @@ boton.addEventListener("click", function () {
   setTimeout(function () {
     toast.style.opacity = "0";}, 3000); //Hace desaparecer el toast
 });
-//Llamo a la caja para luego agregarle las paletas de colores, y genero un color HSL y luego le digo que cambie el fondo de la caja
-const caja = document.querySelector(".caja");
 
+const caja = document.querySelector(".caja");
 // Obtener el valor seleccionado del select
 let valor = cantidadPaletas.value;
 console.log("Valor inicial seleccionado:", valor);
@@ -103,7 +102,7 @@ function hslToHex(h, s, l) {
 
   return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
 }
-// Llamo a la función generarCajas al cargar la página para mostrar las cajas iniciales
+
 window.addEventListener("DOMContentLoaded", function () {
   generarCajas(6);
 });

@@ -135,3 +135,10 @@ footer {
 footer p {
     margin: 0;
 }
+select option {
+    text-align: center;
+    padding: 10px;
+}
+button:hover {
+    background-color: #2563eb;
+}
